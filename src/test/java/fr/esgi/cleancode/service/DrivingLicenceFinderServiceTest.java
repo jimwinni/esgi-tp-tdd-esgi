@@ -26,13 +26,14 @@ class DrivingLicenceFinderServiceTest {
     @Test
     void should_find() {
         final var id = UUID.randomUUID();
-
         final var drivingLicence = DrivingLicence.builder().id(id).build();
 
         Assertions.assertThatNoException().isThrownBy(() -> database.save(id, drivingLicence));
 
-        assertThat(drivingLicence)
-                .isEqualTo(service.findById(id));
+        final var actual = service.findById(id);
+
+        assertThat(Optional.ofNullable(actual))
+                .isNotEqualTo(Optional.empty());
     }
 
     @Test

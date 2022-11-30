@@ -9,7 +9,7 @@ import java.util.UUID;
 
 public class DrivingLicencePenaltyServiceTest {
 
-    private InMemoryDatabase database;
+    private InMemoryDatabase database = InMemoryDatabase.getInstance();
 
     @Test
     void should_reduce_points() {

@@ -10,8 +10,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import java.util.UUID;
 
 public class DrivingLicenceSaveServiceTest {
-    private InMemoryDatabase database;
-    private DrivingLicenceIdGenerationService drivingLicenceIdGenerationService;
+    private InMemoryDatabase database = InMemoryDatabase.getInstance();
+    private DrivingLicenceIdGenerationService drivingLicenceIdGenerationService = new DrivingLicenceIdGenerationService();
 
     @Test
     void should_validate() {
